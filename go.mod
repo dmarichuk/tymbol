@@ -1,4 +1,4 @@
-module tymbol
+module github.com/dmarichuk/tymbol
 
 go 1.20
 
