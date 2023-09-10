@@ -1,7 +1,6 @@
-package table
+package tymbol
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -365,7 +364,6 @@ func TestMultiLineTable(t *testing.T) {
 |     3      |  testtest  |
 +------------+------------+
 `
-		fmt.Print(got)
 		assert.Equal(t, want, got)
 	})
 	t.Run("Multi line table", func(t *testing.T) {
@@ -385,7 +383,6 @@ func TestMultiLineTable(t *testing.T) {
 |     2      |    test    |
 +------------+------------+
 `
-		fmt.Print(got)
 		assert.Equal(t, want, got)
 	})
 

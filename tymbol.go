@@ -1,4 +1,4 @@
-package table
+package tymbol
 
 import (
 	"fmt"
@@ -167,27 +167,15 @@ func (t *Table) drawValueLine(hasLeft, hasRight bool, vSym rune, lineAlign align
 }
 
 func (t *Table) drawValueMultiLine(hasLeft, hasRight bool, vSym rune, lineAlign align, cellLength int, rowHeight int, filledRows int, cursor int, v string) {
-	fmt.Println("==============")
-	fmt.Println("ARGS:")
-	fmt.Println("cellLength: ", cellLength)
-	fmt.Println("value: ", v)
-	fmt.Println("INIT: ", rowHeight, " ", filledRows, " ", cursor)
 	upperPadding := (rowHeight - filledRows) / 2
-	fmt.Println("upper padding: ", upperPadding)
 	if cursor < upperPadding || cursor >= filledRows+upperPadding {
-		fmt.Println("EMPTY LINE")
 		t.drawValueLine(hasLeft, hasRight, vSym, lineAlign, cellLength, SPACE)
 	} else {
-		fmt.Println("VALUE LINE")
 		position := (cursor - upperPadding) * t.Options.CellLength()
-		fmt.Println("POSITION: ", position)
 		charsLeft := len(v) - position
-		fmt.Println("charsLeft: ", charsLeft)
 		if charsLeft < t.Options.CellLength() {
-			fmt.Println("PRINT LEFTOVER: ", v[position:])
 			t.drawValueLine(hasLeft, hasRight, vSym, lineAlign, cellLength, v[position:])
 		} else {
-			fmt.Println("PRINT PART: ", v[position:position+t.Options.CellLength()])
 			t.drawValueLine(hasLeft, hasRight, vSym, lineAlign, cellLength, v[position:position+t.Options.CellLength()])
 		}
 	}
