@@ -37,7 +37,7 @@ func main() {
 	result := table.Draw()
 	fmt.Println(result)
 	/*
-			            Players' scores
+				Players' scores
 		#==============#==============#==============#
 		#      id      #     Name     #    Status    #
 		#==============#==============#==============#
@@ -123,7 +123,7 @@ func main() {
 	fmt.Println(result)
 
 	/*
-		          Shakespear Sonnets
+			   Shakespear Sonnets
 		#==================#==================#
 		#        id        #     Sonnets      #
 		#==================#==================#
